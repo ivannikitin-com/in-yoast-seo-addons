@@ -38,7 +38,7 @@ add_action( 'init', 'inysa_init' );
 function inysa_init() 
 {
 	// Локализация плагина
-	load_plugin_textdomain( INUG, false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );		
+	load_plugin_textdomain( INYSA, false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );		
 
 }
 
