@@ -5,7 +5,7 @@
  * Description: Add-on set for Yoast SEO WordPress Plugin
  * Version: 0.1
  * Author: Ivan Nikitin and partners
- * Author URI: http://ivannikitin.com
+ * Author URI: https://ivannikitin.com
  * Text domain: in-yoast-seo-addons
  *
  * Copyright 2016 Ivan Nikitin  (email: info@ivannikitin.com)
