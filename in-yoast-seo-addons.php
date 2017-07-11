@@ -42,5 +42,27 @@ function inysa_init()
 
 }
 
+/* Disable sitemap cache */
+add_filter( 'wpseo_enable_xml_sitemap_transient_caching', '__return_false' );
+
 /* Remove Images From Yoast Sitemap */
 add_filter( 'wpseo_xml_sitemap_img', '__return_false' );
+
+add_filter( 'wpseo_sitemap_url', 'inysa_sitemap_url', 10, 2 );
+function inysa_sitemap_url( $output, $url )
+{
+	$output = preg_replace( array(
+			'/(<image:image>)/i',
+			'/(<\/image:image>)/i',
+			'/(<image:loc>.*<\/image:loc>)/i',
+			'/(<image:caption>.*<\/image:caption>)/i',
+		), '', $output );
+	
+	return $output;
+}
+
+//add_filter( 'wpseo_sitemap_urlimages', 'inysa_sitemap_urlimages', 10, 2 );
+function inysa_remove_image( $images, $post_id )
+{
+	return array();
+}
