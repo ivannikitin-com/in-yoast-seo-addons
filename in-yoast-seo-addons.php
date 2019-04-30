@@ -1,7 +1,7 @@
 <?php 
 /**
  * Plugin Name: IN Yoast SEO Addons
- * Plugin URI: http://in-soft.pro/soft/in-yoast-seo-addons/
+ * Plugin URI: https://ivannikitin-com.github.io/in-yoast-seo-addons/
  * Description: Add-on set for Yoast SEO WordPress Plugin
  * Version: 0.1
  * Author: Ivan Nikitin and partners
@@ -61,8 +61,8 @@ function inysa_sitemap_url( $output, $url )
 	return $output;
 }
 
-//add_filter( 'wpseo_sitemap_urlimages', 'inysa_sitemap_urlimages', 10, 2 );
-function inysa_remove_image( $images, $post_id )
+add_filter( 'wpseo_canonical', 'inysa_canonicall' );
+function inysa_canonicall( $canonical )
 {
-	return array();
+	return preg_replace('/page\/[\d]+.*$/', '', $canonical);
 }
